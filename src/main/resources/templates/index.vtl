@@ -1,24 +1,36 @@
-<div class="container">
+<div class="jumbotron">
   <h1>Places You've Been</h1>
-  <p></p>
-  #if ($places)
-  <ul>
-    #foreach ($place in $places)
-    <li>$place.getDescription()</li>
-    #end
-  </ul>
-  #else
-    <p>No Places Added!</p>
-    #end
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h3>Add a new place:</h3><br>
+        <form action='/places' method='post'>
 
-  <h3>Add a new place: </h3>
-  <form action='/places' method='post'>
+          <div class="form-group">
+            <label for="description">Place description</label>
+            <input id="description" name="description" type="text">
+          </div>
 
-    <div class="form-group">
-      <label for="description">Place description</label>
-      <input id="description" name="description" type="text">
+          <button type="submit" class="btn btn-info">Add place</button>
+        </form><br>
+      </div>
     </div>
-
-    <button type="submit" class="btn btn-info">Add place</button>
-  </form>
+    <div class="col-sm-8">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h3>Places</h3>
+        <p></p>
+        #if ($places)
+        <ul>
+          #foreach ($place in $places)
+          <li>$place.getDescription()</li>
+          #end
+        </ul>
+        #else
+          <p>No Places Added!</p>
+        #end
+      </div>
+    </div>
+  </div>
 </div>

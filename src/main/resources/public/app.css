@@ -2,5 +2,9 @@ h1 {
   text-align: center;
 }
 body {
-  background-color: #339966;
+  background-color: #ABD69C;
+}
+.col-sm-10 {
+  background-color: #c2e1b7;
+  border-radius: 8px;
 }
