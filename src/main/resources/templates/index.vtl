@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Places You've Been</h1>
+  <p></p>
+  #if ($places)
+  <ul>
+    #foreach ($place in $places)
+    <li>$place.getDescription()</li>
+    #end
+  </ul>
+  #else
+    <p>No Places Added!</p>
+    #end
+
+  <h3>Add a new place: </h3>
+  <form action='/places' method='post'>
+
+    <div class="form-group">
+      <label for="description">Place description</label>
+      <input id="description" name="description" type="text">
+    </div>
+
+    <button type="submit" class="btn btn-info">Add place</button>
+  </form>
+</div>
